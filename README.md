@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Meridian Pathways
 
-## Getting Started
+A demo website for a fictional immigration consultancy, built by MyClickAid for its portfolio gallery.
 
-First, run the development server:
+Live demo: https://meridian-demo.derin-obasa.workers.dev/
 
-```bash
+Not real immigration advice. Meridian Pathways, its consultant, licence, programs, timelines and eligibility information are fictional and illustrative. Nothing on this site is legal or immigration advice, and no forms send any data.
+
+What it shows
+Programs finder: tabs by goal (live, work, study, join family, visit), a Programs mega-menu on desktop and a drill-down menu on mobile.
+"I want to…" hero panel: goal chips that open the eligibility check with the goal already chosen.
+Eligibility check: five questions that point to programs worth discussing, with a progress bar.
+Document checklist: pick a program, tick documents off and watch the progress bar fill.
+Process timeline: five steps with a line that draws as you scroll.
+Testimonials carousel, guides, FAQ and a booking form with a demo confirmation.
+Details: an animated globe and stamp badge, a utility bar with a language toggle (visual only), a newsletter form in the footer, reduced-motion support, and keyboard-friendly menus.
+Built with
+Next.js (App Router, JavaScript, static export)
+Tailwind CSS v4
+Fonts: Fraunces and Work Sans, self-hosted with @fontsource
+Hosted on Cloudflare
+Getting started
+bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+To create the production build (a static site in the out folder):
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+bash
+npm run build
+Project structure
+app/
+\_components/ Header, Footer, Globe, Stamp, ProgramFilter, ChecklistTool, ...
+\_libs/ site.js, data.js, pictures.js, helpers.js
+\_styles/ globals.css
+programs/ Programs list and program pages
+eligibility/ Eligibility check
+checklist/ Document checklist
+process/ How it works
+about/ book/ About page and booking form
+public/ Photos (.webp)
+Photos
 
-## Learn More
+Photos are optional. Each slot shows a gradient placeholder until you add an image. Put the files in public/ and register them in app/\_libs/pictures.js:
 
-To learn more about Next.js, take a look at the following resources:
+Slot File Ratio
+Hero mp-hero.webp 4:5
+About mp-about.webp 4:5
+Office mp-office.webp 4:3
+Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The site is a static export (output: "export" in next.config.mjs) and deploys to Cloudflare from this repository. Every push to the main branch rebuilds and redeploys it.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+About MyClickAid
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MyClickAid is a bespoke web design studio. This site is one of several demo projects that show what a custom-designed website can look like for different kinds of businesses.
